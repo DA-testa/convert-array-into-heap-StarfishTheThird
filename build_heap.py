@@ -26,33 +26,25 @@ def build_heap(data):
     return swaps
     
 def main():
-    data = []
+    data = 0
     input_type = input(" 'I' or 'F' :")
     if input_type == "I":
-        n = int(input("Enter amount of elements: "))
+        n = int(input("Enter amout of elements: "))
         data = list(map(int, input("Enter the elements in a row: ").split()))
-    elif input_type == "F":
-        filename = input("File name: ")
-        try:
-            with open("tests/"+filename, 'r') as f:
-                n = int(f.readline())
-                data = list(map(int, f.readline().split()))
-        except FileNotFoundError:
-            print("File not found.")
-            return
-        except ValueError:
-            print("File format is invalid.")
-            return
 
-    if len(data) != n:
-        print("Number of elements does not match.")
-        return
+    elif input_type == "F":
+
+        filename = input("File name: ")
+        with open("tests/"+filename, 'r') as f:
+            n = int(f.readline())
+            data = list(map(int, f.readline().split()))
+
+    assert len(data) == n
 
     swaps = build_heap(data)
     print(len(swaps))
     for root, j in swaps:
         print(root, j)
-
 
 
 if __name__ == "__main__":
