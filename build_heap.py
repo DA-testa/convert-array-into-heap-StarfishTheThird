@@ -34,8 +34,8 @@ def main():
 
     elif input_type == "F":
 
-        filename = input("Enter the filename: ")
-        with open(filename, "r") as f:
+        filename = input("File name: ")
+        with open("tests/"+filename, 'r') as f:
             n = int(f.readline())
             data = list(map(int, f.readline().split()))
 
