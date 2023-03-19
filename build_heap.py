@@ -1,7 +1,6 @@
 # python3
 
 def build_heap(data):
-    data = 0
     def sift_down(root):
         nonlocal swaps
         min = root
@@ -27,7 +26,7 @@ def build_heap(data):
     return swaps
     
 def main():
-
+    data = 0
     input_type = input(" 'I' or 'F' :")
     if input_type == "I":
         n = int(input("Enter amout of elements: "))
