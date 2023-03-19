@@ -1,6 +1,7 @@
 # python3
 
 def build_heap(data):
+    data = 0
     def sift_down(root):
         nonlocal swaps
         min = root
